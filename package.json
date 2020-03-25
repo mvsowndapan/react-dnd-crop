@@ -1,5 +1,5 @@
 {
-  "name": "react-dnd-cropper",
+  "name": "react-dnd-crop",
   "version": "1.2.0",
   "description": "React custom  Drag and drop with Cropper",
   "main": "dist/index.js",
