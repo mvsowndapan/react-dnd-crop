@@ -1,9 +1,5 @@
 # React Drag And Drop With Cropper
 
-## npm 1.0.0
-
-<!-- [![React Image Crop on NPM](https://github.com/mvsowndapan/react-dnd-cropper/blob/master/https://img.shields.io/npm/v/react-image-crop.svg)](https://github.com/mvsowndapan/react-dnd-cropper/blob/master/https://www.npmjs.com/package/react-custom-dnd) -->
-
 ## Demo
 
 ![Demo](https://github.com/mvsowndapan/react-dnd-cropper/blob/master/asset/demo.gif)
