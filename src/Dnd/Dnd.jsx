@@ -9,9 +9,9 @@ import {
 } from "./helper";
 import { style } from "./style";
 import Modal from "../Modal/Modal";
-import CancelIcon from "../../asset/icons/cancel.svg";
-import CropIcon from "../../asset/icons/crop.svg";
-import ImageIcon from "../../asset/icons/image.svg";
+import CancelIcon from "../icons/cancel.svg";
+import CropIcon from "../icons/crop.svg";
+import ImageIcon from "../icons/image.svg";
 import "./Dnd.css";
 
 class Dnd extends Component {
