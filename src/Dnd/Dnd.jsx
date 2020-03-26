@@ -204,7 +204,7 @@ class Dnd extends Component {
     let { imageUrls, open, cropImgSrc } = this.state;
     let styles = style(this.props);
     return (
-      <div onMouseLeave={this.convertImageForupload}>
+      <div onMouseOut={this.convertImageForupload}>
         <input
           ref={this.INPUT_REF}
           type="file"

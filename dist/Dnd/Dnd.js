@@ -386,7 +386,7 @@ var Dnd = function (_Component) {
       var styles = (0, _style.style)(this.props);
       return _react2.default.createElement(
         "div",
-        { onMouseLeave: this.convertImageForupload },
+        { onMouseOut: this.convertImageForupload },
         _react2.default.createElement("input", {
           ref: this.INPUT_REF,
           type: "file",

@@ -52,7 +52,7 @@ Except Callback all the props are optional
 
 ### Callback
 
-Callback is invoked when `onMouseLeave` occur on the Dnd.
+Callback is invoked when `onMouseOut` React Event occur on the Dnd.
 
 ```js
 const callback = payload => {
