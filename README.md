@@ -84,6 +84,69 @@ payload: {
 
 ![CallBack Demo](https://github.com/mvsowndapan/react-dnd-crop/blob/master/asset/callback_example.gif)
 
+### Crop
+
+To enable Crop use crop props, by default `false`
+
+```js
+<Dnd crop />
+```
+
+or
+
+```js
+<Dnd crop = true />
+```
+
+you can disable it by passing props `crop = false`
+
+```js
+<Dnd crop = false />
+```
+
+or
+
+```js
+<Dnd />
+```
+
+#### Crop Ratio
+
+Crop ratio helps to crop the image in a required aspect ratio.
+
+```js
+const cropRatio = {
+  unit: "%",
+  width: 30,
+  aspect: 5 / 3 //aspect ratio is 5/3
+};
+
+/*
+Default value involves
+  unit: "%"
+  width: 30
+  aspect: 4 / 3
+*/
+
+<Dnd cropRatio={cropRatio} />;
+```
+
+It works fine even unit and width is not mentioned.
+
+#### Crop preview
+
+##### Mentioning unit and width (By Default)
+
+![Crop preview](https://github.com/mvsowndapan/react-dnd-crop/blob/master/asset/crop/with_aspect_ratio.png)
+
+By default Crop is initiated
+
+##### Without mentioning unit and width
+
+![Crop preview](https://github.com/mvsowndapan/react-dnd-crop/blob/master/asset/crop/without_aspect_ratio.png)
+
+You have to initiate the crop here.
+
 ### Maximum Image Uploads
 
 Maximum images that can be uploaded. Default value is 12.
@@ -153,69 +216,6 @@ Default Error Messages
 ```
 
 these messages will return in payload.
-
-### Crop
-
-To enable Crop use crop props, by default `false`
-
-```js
-<Dnd crop />
-```
-
-or
-
-```js
-<Dnd crop = true />
-```
-
-you can disable it by passing props `crop = false`
-
-```js
-<Dnd crop = false />
-```
-
-or
-
-```js
-<Dnd />
-```
-
-#### Crop Ratio
-
-Crop ratio helps to crop the image in a required aspect ratio.
-
-```js
-const cropRatio = {
-  unit: "%",
-  width: 30,
-  aspect: 5 / 3 //aspect ratio is 5/3
-};
-
-/*
-Default value involves
-  unit: "%"
-  width: 30
-  aspect: 4 / 3
-*/
-
-<Dnd cropRatio={cropRatio} />;
-```
-
-It works fine even unit and width is not mentioned.
-
-#### Crop preview
-
-##### Mentioning unit and width (By Default)
-
-![Crop preview](https://github.com/mvsowndapan/react-dnd-crop/blob/master/asset/crop/with_aspect_ratio.png)
-
-By default Crop is initiated
-
-##### Without mentioning unit and width
-
-![Crop preview](https://github.com/mvsowndapan/react-dnd-crop/blob/master/asset/crop/without_aspect_ratio.png)
-
-You have to initiate the crop here.
 
 ### Icons
 
