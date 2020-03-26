@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mvsowndapan/react-image-crop.git"
+    "url": "git+https://github.com/mvsowndapan/react-dnd-crop.git"
   },
   "keywords": [
     "react",
@@ -24,9 +24,9 @@
   "author": "Sowndapan M V",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mvsowndapan/react-dnd-custom/issues"
+    "url": "https://github.com/mvsowndapan/react-dnd-crop/issues"
   },
-  "homepage": "https://github.com/mvsowndapan/react-dnd-custom#readme",
+  "homepage": "https://github.com/mvsowndapan/react-dnd-crop#readme",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
