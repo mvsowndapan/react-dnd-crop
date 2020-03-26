@@ -20,15 +20,15 @@ var _Modal = require("../Modal/Modal");
 
 var _Modal2 = _interopRequireDefault(_Modal);
 
-var _cancel = require("../../asset/icons/cancel.svg");
+var _cancel = require("../icons/cancel.svg");
 
 var _cancel2 = _interopRequireDefault(_cancel);
 
-var _crop = require("../../asset/icons/crop.svg");
+var _crop = require("../icons/crop.svg");
 
 var _crop2 = _interopRequireDefault(_crop);
 
-var _image = require("../../asset/icons/image.svg");
+var _image = require("../icons/image.svg");
 
 var _image2 = _interopRequireDefault(_image);
 
