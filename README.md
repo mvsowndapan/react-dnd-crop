@@ -17,11 +17,10 @@
 
 1. Responsive (you can use pixels or percentages).
 2. Touch enabled.
-3. Crop with custom crop size.
+3. Crop with custom crop size and can be disabled.
 4. No Document Manipulation.
 5. Standard image formats are accepted.
 6. Images with Errors are highlighted with different color.
-7. Crop Option can be disabled
 
 ## Installation
 
