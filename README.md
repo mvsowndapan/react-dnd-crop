@@ -20,11 +20,12 @@
 1. Responsive (you can use pixels or percentages).
 2. Upload / Browse images.
 3. Crop with custom crop size and can be disabled.
-4. No Document Manipulation.
-5. Standard image formats are accepted.
-6. Images with Errors are highlighted with different color.
-7. Drag and Drop can be done both row and colomn wise.
-8. Customizable images and buttons.
+4. Free Crop is also avilable.
+5. No Document Manipulation.
+6. Standard image formats are accepted.
+7. Images with Errors are highlighted with different color.
+8. Drag and Drop can be done both row and colomn wise.
+9. Customizable images and buttons.
 
 ## Installation
 
@@ -136,6 +137,23 @@ Default value involves
 ```
 
 It works fine even unit and width is not mentioned.
+
+```js
+const cropRatio = {
+  unit: "%",
+  width: 30
+};
+```
+
+If aspect ratio is not given default will be 4:3
+
+#### Free Crop
+
+If `freeCrop` is enabled, you can crop in any ratio. By default `false`
+
+```js
+<Dnd freeCrop={true}>
+```
 
 #### Crop preview
 

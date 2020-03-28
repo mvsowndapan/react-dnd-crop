@@ -1,6 +1,6 @@
-export const validateImage = (file, callback) => {
+export const validateImage = (file, callback, cropRatio, freeCrop) => {
   var _URL = window.URL || window.webkitURL;
-  const imageRatio = 4 / 3;
+  const imageRatio = cropRatio.aspect || 4 / 3;
   var img = new Image();
   if (file) {
     img = new Image();
@@ -10,8 +10,7 @@ export const validateImage = (file, callback) => {
       let reader = new FileReader();
       reader.readAsDataURL(file);
       reader.onload = () => {
-        if (imageRatio === this.width / this.height)
-          return callback(true, reader.result);
+        if (imageRatio === this.width / this.height || freeCrop === true || !cropRatio.aspect) return callback(true, reader.result);
         else return callback(false, reader.result);
       };
     };
@@ -60,10 +59,7 @@ export function base64StringtoFile(base64String, filename) {
   return new File([u8arr], filename, { type: mime });
 }
 export function extractImageFileExtensionFromBase64(base64Data) {
-  return base64Data.substring(
-    "data:image/".length,
-    base64Data.indexOf(";base64")
-  );
+  return base64Data.substring("data:image/".length, base64Data.indexOf(";base64"));
 }
 // Base64 Image to Canvas with a Crop
 export function image64toCanvasRef(canvasRef, image64, pixelCrop) {
@@ -75,16 +71,6 @@ export function image64toCanvasRef(canvasRef, image64, pixelCrop) {
   const image = new Image();
   image.src = image64;
   image.onload = function() {
-    ctx.drawImage(
-      image,
-      pixelCrop.x,
-      pixelCrop.y,
-      pixelCrop.width,
-      pixelCrop.height,
-      0,
-      0,
-      pixelCrop.width,
-      pixelCrop.height
-    );
+    ctx.drawImage(image, pixelCrop.x, pixelCrop.y, pixelCrop.width, pixelCrop.height, 0, 0, pixelCrop.width, pixelCrop.height);
   };
 }

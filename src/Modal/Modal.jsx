@@ -15,6 +15,7 @@ class Cropper extends Component {
           width: 30,
           aspect: 4 / 3
         };
+    if (props.freeCrop) cropRatio = {};
     this.state = {
       crop: cropRatio
     };
@@ -37,17 +38,7 @@ class Cropper extends Component {
     canvas.width = crop.width;
     canvas.height = crop.height;
     const ctx = canvas.getContext("2d");
-    ctx.drawImage(
-      image,
-      crop.x * scaleX,
-      crop.y * scaleY,
-      crop.width * scaleX,
-      crop.height * scaleY,
-      0,
-      0,
-      crop.width,
-      crop.height
-    );
+    ctx.drawImage(image, crop.x * scaleX, crop.y * scaleY, crop.width * scaleX, crop.height * scaleY, 0, 0, crop.width, crop.height);
     return canvas.toDataURL();
   };
 
@@ -55,11 +46,7 @@ class Cropper extends Component {
     const { crop } = this.state;
     return (
       <div className="CropperModalOuterContainer">
-        <Modal
-          isOpen={this.props.isOpen}
-          onRequestClose={this.props.onRequestClose}
-          className="CropperModal"
-        >
+        <Modal isOpen={this.props.isOpen} onRequestClose={this.props.onRequestClose} className="CropperModal">
           <div className="CropperImage">
             {this.props.imageSrc && (
               <Crop
@@ -80,30 +67,14 @@ class Cropper extends Component {
           </div>
           <div id="CROPPER_BUTTON_CONTAINER">
             <Button
-              value={
-                this.props.buttonvalue && this.props.buttonvalue.cropButton
-                  ? this.props.buttonvalue.cropButton
-                  : "Crop"
-              }
-              style={
-                this.props.style && this.props.style.CROP_BUTTON
-                  ? this.props.style.CROP_BUTTON
-                  : null
-              }
+              value={this.props.buttonvalue && this.props.buttonvalue.cropButton ? this.props.buttonvalue.cropButton : "Crop"}
+              style={this.props.style && this.props.style.CROP_BUTTON ? this.props.style.CROP_BUTTON : null}
               onClick={this.helperfunc}
             ></Button>
             {this.props.buttonvalue && this.props.buttonvalue.cancelButton ? (
               <Button
-                value={
-                  this.props.buttonvalue && this.props.buttonvalue.cancelButton
-                    ? this.props.buttonvalue.cancelButton
-                    : "Cancel"
-                }
-                style={
-                  this.props.style && this.props.style.CANCEL_BUTTON
-                    ? this.props.style.CANCEL_BUTTON
-                    : null
-                }
+                value={this.props.buttonvalue && this.props.buttonvalue.cancelButton ? this.props.buttonvalue.cancelButton : "Cancel"}
+                style={this.props.style && this.props.style.CANCEL_BUTTON ? this.props.style.CANCEL_BUTTON : null}
                 onClick={this.cancelFunc}
               ></Button>
             ) : (
