@@ -96,7 +96,7 @@ class Dnd extends Component {
   }
   onImageDrop(e) {
     this.preventDefaults(e);
-    let { files, imageUrls, mimeType, errorMessage, cropRatio } = this.state,
+    let { files, imageUrls, mimeType, errorMessage, cropRatio, freeCrop } = this.state,
       validUpload = true;
     let newFiles = e.dataTransfer.files;
     if (imageUrls.length + newFiles.length > (this.props.maxImageUpload || 12))
@@ -114,7 +114,7 @@ class Dnd extends Component {
     });
     if (validUpload) {
       this.setState({ files: [...files, ...newFiles] });
-      [...newFiles].forEach(file => validateImage(file, this.getImageDataUrl, cropRatio));
+      [...newFiles].forEach(file => validateImage(file, this.getImageDataUrl, cropRatio, freeCrop));
     }
   }
   getImageDataUrl(isValid, url) {
