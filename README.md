@@ -149,7 +149,7 @@ If aspect ratio is not given default will be 4:3
 
 #### Free Crop
 
-If `freeCrop` is enabled, you can crop in any ratio. By default `false`
+If `freeCrop` is enabled, you can crop in any ratio but crop validation is not done. By default `false`
 
 ```js
 <Dnd freeCrop={true}>
