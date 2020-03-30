@@ -4,7 +4,7 @@
 
 ## Demo
 
-![Demo](https://github.com/mvsowndapan/react-dnd-crop/blob/master/asset/demo.gif)
+![Demo](https://github.com/mvsowndapan/react-dnd-crop/blob/master/asset/demo.gif?raw=true)
 
 ## Tabel of Contents
 
