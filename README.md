@@ -87,7 +87,7 @@ payload: {
 
 #### CallBack Demo
 
-![CallBack Demo](https://github.com/mvsowndapan/react-dnd-crop/blob/master/asset/callback_example.gif)
+![CallBack Demo](https://github.com/mvsowndapan/react-dnd-crop/blob/master/asset/callback_example.gif?raw=true)
 
 ### Crop
 
@@ -159,13 +159,13 @@ If `freeCrop` is enabled, you can crop in any ratio but crop validation is not d
 
 ##### Mentioning unit and width (By Default)
 
-![Crop preview](https://github.com/mvsowndapan/react-dnd-crop/blob/master/asset/crop/with_aspect_ratio.png)
+![Crop preview](https://github.com/mvsowndapan/react-dnd-crop/blob/master/asset/crop/with_aspect_ratio.png?raw=true)
 
 By default Crop is initiated
 
 ##### Without mentioning unit and width
 
-![Crop preview](https://github.com/mvsowndapan/react-dnd-crop/blob/master/asset/crop/without_aspect_ratio.png)
+![Crop preview](https://github.com/mvsowndapan/react-dnd-crop/blob/master/asset/crop/without_aspect_ratio.png?raw=true)
 
 You have to initiate the crop here.
 
@@ -204,7 +204,7 @@ Default Label is `Drag and drop images here`.
 
 #### Label Preview
 
-![Label Preview](https://github.com/mvsowndapan/react-dnd-crop/blob/master/asset/label_preview.png)
+![Label Preview](https://github.com/mvsowndapan/react-dnd-crop/blob/master/asset/label_preview.png?raw=true)
 
 ### Message
 
@@ -216,7 +216,7 @@ Default Message is `Hold and Drag to rearrange the order`.
 
 #### Message Preview
 
-![Message Preview](https://github.com/mvsowndapan/react-dnd-crop/blob/master/asset/message_preview.png)
+![Message Preview](https://github.com/mvsowndapan/react-dnd-crop/blob/master/asset/message_preview.png?raw=true)
 
 #### Error Messages
 
@@ -255,8 +255,8 @@ const icons = {
 
 #### Icons preview (By Default)
 
-![Crop preview](https://github.com/mvsowndapan/react-dnd-crop/blob/master/asset/icons/labelIcon.png)
-![Crop preview](https://github.com/mvsowndapan/react-dnd-crop/blob/master/asset/icons/cancel_crop_icons.png)
+![Crop preview](https://github.com/mvsowndapan/react-dnd-crop/blob/master/asset/icons/labelIcon.png?raw=true)
+![Crop preview](https://github.com/mvsowndapan/react-dnd-crop/blob/master/asset/icons/cancel_crop_icons.png?raw=true)
 
 ### Button Value
 
@@ -277,7 +277,7 @@ const buttonvalue = {
 
 #### Button preview 1
 
-![Button preview](https://github.com/mvsowndapan/react-dnd-crop/blob/master/asset/cancel_crop_button.png);
+![Button preview](https://github.com/mvsowndapan/react-dnd-crop/blob/master/asset/cancel_crop_button.png?raw=true);
 
 ```js
 const buttonvalue = {
@@ -293,7 +293,7 @@ const buttonvalue = {
 
 #### Button preview 2
 
-![Button preview](https://github.com/mvsowndapan/react-dnd-crop/blob/master/asset/single_button_demo.png);
+![Button preview](https://github.com/mvsowndapan/react-dnd-crop/blob/master/asset/single_button_demo.png?raw=true);
 
 ### Styles
 
@@ -320,7 +320,7 @@ You can only change width and height
 
 #### Drag and Drop Area preview
 
-![Drag and Drop Area  preview](https://github.com/mvsowndapan/react-dnd-crop/blob/master/asset/dnd.png)
+![Drag and Drop Area  preview](https://github.com/mvsowndapan/react-dnd-crop/blob/master/asset/dnd.png?raw=true)
 
 #### Message Styles
 
@@ -336,7 +336,7 @@ You can only change top, fontsize, color
 
 #### Message preview
 
-![Message Preview](https://github.com/mvsowndapan/react-dnd-crop/blob/master/asset/message_preview.png)
+![Message Preview](https://github.com/mvsowndapan/react-dnd-crop/blob/master/asset/message_preview.png?raw=true)
 
 #### Crop and Cancel Button Styles
 
@@ -359,7 +359,7 @@ Note : The styles you provide here may affect the Crop Modal
 
 #### Crop and Cancel Button preview
 
-![Message Preview](https://github.com/mvsowndapan/react-dnd-crop/blob/master/asset/crop/crop_and_cancel_style.png)
+![Message Preview](https://github.com/mvsowndapan/react-dnd-crop/blob/master/asset/crop/crop_and_cancel_style.png?raw=true)
 
 #### Crop and Cancel Icon Styles
 
@@ -390,7 +390,7 @@ You can only change these properties.
 
 #### Crop and Cancel Icon preview
 
-![Message Preview](https://github.com/mvsowndapan/react-dnd-crop/blob/master/asset/icons/cancel_crop_icons.png)
+![Message Preview](https://github.com/mvsowndapan/react-dnd-crop/blob/master/asset/icons/cancel_crop_icons.png?raw=true)
 
 #### Drag And Drop Area Item Styles
 
@@ -411,7 +411,7 @@ You can only change these properties. The red border around it refers that the i
 
 #### Drag And Drop Area Item preview
 
-![Drag And Drop Area Item Preview](https://github.com/mvsowndapan/react-dnd-crop/blob/master/asset/crop/crop_and_Cancel_demo.png)
+![Drag And Drop Area Item Preview](https://github.com/mvsowndapan/react-dnd-crop/blob/master/asset/crop/crop_and_Cancel_demo.png?raw=true)
 
 ### Entire Style Object
 
