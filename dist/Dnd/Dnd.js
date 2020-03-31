@@ -245,18 +245,20 @@ var Dnd = function (_Component) {
                 _state4 = this.state, files = _state4.files, imageUrls = _state4.imageUrls, mimeType = _state4.mimeType, errorMessage = _state4.errorMessage, cropRatio = _state4.cropRatio;
                 file = e.target.files[0];
 
+                e.target.value = null;
+
                 if (file) {
-                  _context2.next = 4;
+                  _context2.next = 5;
                   break;
                 }
 
                 return _context2.abrupt("return");
 
-              case 4:
+              case 5:
                 files = [].concat(_toConsumableArray(files), [file]);
 
                 if ((0, _helper.validateImageMimeType)(file, mimeType)) {
-                  _context2.next = 7;
+                  _context2.next = 8;
                   break;
                 }
 
@@ -264,9 +266,9 @@ var Dnd = function (_Component) {
                   error: errorMessage.imageFormat || "Only Jpeg/Jpg/Png/Gif Allowed"
                 }));
 
-              case 7:
+              case 8:
                 if (!(imageUrls.length + 1 > this.props.maxImageUpload)) {
-                  _context2.next = 9;
+                  _context2.next = 10;
                   break;
                 }
 
@@ -274,13 +276,13 @@ var Dnd = function (_Component) {
                   error: errorMessage.maxImageUpload || "You Cant Upload More than " + this.props.maxImageUpload + " Files"
                 }));
 
-              case 9:
+              case 10:
                 this.setState({ files: files }, function () {
                   (0, _helper.validateImage)(file, _this3.getImageDataUrl, cropRatio, _this3.props.freeCrop);
                 });
                 this.convertImageForupload();
 
-              case 11:
+              case 12:
               case "end":
                 return _context2.stop();
             }
@@ -398,9 +400,15 @@ var Dnd = function (_Component) {
         _react2.default.createElement("input", { ref: this.INPUT_REF, type: "file", id: "DRAG_AND_DROP_AREA_INPUT", onChange: this.onInputChange }),
         _react2.default.createElement(
           "div",
-          { id: "DRAG_AND_DROP_AREA", style: styles.DRAG_AND_DROP_AREA, onDragOver: function onDragOver(e) {
+          {
+            id: "DRAG_AND_DROP_AREA",
+            style: styles.DRAG_AND_DROP_AREA,
+            onDragOver: function onDragOver(e) {
               return _this4.preventDefaults(e);
-            }, onDrop: this.onImageDrop, onClick: this.onImageBrowse },
+            },
+            onDrop: this.onImageDrop,
+            onClick: this.onImageBrowse
+          },
           imageUrls.length === 0 ? null : _react2.default.createElement(
             "span",
             { id: "DRAG_AND_DROP_MESSAGE", style: styles.DRAG_AND_DROP_MESSAGE },
@@ -449,21 +457,33 @@ var Dnd = function (_Component) {
                   },
                   _react2.default.createElement(
                     "div",
-                    { id: "DRAG_AND_DROP_AREA_ITEM_IMAGE_CONTAINER", onDragOver: function onDragOver(e) {
+                    {
+                      id: "DRAG_AND_DROP_AREA_ITEM_IMAGE_CONTAINER",
+                      onDragOver: function onDragOver(e) {
                         return _this4.preventDefaults(e);
-                      }, style: { backgroundImage: "url(" + item.url + ")" } },
+                      },
+                      style: { backgroundImage: "url(" + item.url + ")" }
+                    },
                     _react2.default.createElement(
                       "span",
-                      { id: "DRAG_AND_DROP_AREA_ITEM_CANCEL_ICON", style: styles.DRAG_AND_DROP_AREA_ITEM_CANCEL_ICON, onClick: function onClick() {
+                      {
+                        id: "DRAG_AND_DROP_AREA_ITEM_CANCEL_ICON",
+                        style: styles.DRAG_AND_DROP_AREA_ITEM_CANCEL_ICON,
+                        onClick: function onClick() {
                           return _this4.removeImage(index);
-                        } },
+                        }
+                      },
                       _this4.props.icons && _this4.props.icons.cancelIcon ? _this4.props.icons.cancelIcon : _react2.default.createElement("img", { src: _cancel2.default, width: "15", height: "15" })
                     ),
                     _this4.props.crop ? _react2.default.createElement(
                       "span",
-                      { id: "DRAG_AND_DROP_AREA_ITEM_CROP_ICON", style: styles.DRAG_AND_DROP_AREA_ITEM_CROP_ICON, onClick: function onClick() {
+                      {
+                        id: "DRAG_AND_DROP_AREA_ITEM_CROP_ICON",
+                        style: styles.DRAG_AND_DROP_AREA_ITEM_CROP_ICON,
+                        onClick: function onClick() {
                           return _this4.openModal(index);
-                        } },
+                        }
+                      },
                       _this4.props.icons && _this4.props.icons.cropIcon ? _this4.props.icons.cropIcon : _react2.default.createElement("img", { src: _crop2.default, width: "15", height: "15" })
                     ) : ""
                   )
@@ -472,7 +492,14 @@ var Dnd = function (_Component) {
             )
           )
         ),
-        _react2.default.createElement(_Modal2.default, _extends({ isOpen: open }, this.props, { onRequestClose: this.handleClearToDefault, getcropImage: this.getcropImage, cancelCrop: this.cancelCrop, imageSrc: cropImgSrc }))
+        _react2.default.createElement(_Modal2.default, _extends({
+          isOpen: open
+        }, this.props, {
+          onRequestClose: this.handleClearToDefault,
+          getcropImage: this.getcropImage,
+          cancelCrop: this.cancelCrop,
+          imageSrc: cropImgSrc
+        }))
       );
     }
   }]);
