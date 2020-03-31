@@ -132,6 +132,7 @@ class Dnd extends Component {
   async onInputChange(e) {
     let { files, imageUrls, mimeType, errorMessage, cropRatio } = this.state;
     let file = e.target.files[0];
+    e.target.value = null;
     if (!file) return;
     files = [...files, file];
     if (!validateImageMimeType(file, mimeType))
@@ -199,7 +200,13 @@ class Dnd extends Component {
     return (
       <div onMouseOut={this.convertImageForupload}>
         <input ref={this.INPUT_REF} type="file" id="DRAG_AND_DROP_AREA_INPUT" onChange={this.onInputChange} />
-        <div id="DRAG_AND_DROP_AREA" style={styles.DRAG_AND_DROP_AREA} onDragOver={e => this.preventDefaults(e)} onDrop={this.onImageDrop} onClick={this.onImageBrowse}>
+        <div
+          id="DRAG_AND_DROP_AREA"
+          style={styles.DRAG_AND_DROP_AREA}
+          onDragOver={e => this.preventDefaults(e)}
+          onDrop={this.onImageDrop}
+          onClick={this.onImageBrowse}
+        >
           {imageUrls.length === 0 ? null : (
             <span id="DRAG_AND_DROP_MESSAGE" style={styles.DRAG_AND_DROP_MESSAGE}>
               {this.props.message || "Hold and Drag to rearrange the order"}
@@ -225,13 +232,33 @@ class Dnd extends Component {
                     onDrop={e => this.onDrop(e, index)}
                     style={item.isValid ? styles.DRAG_AND_DROP_AREA_ITEM : styles.DRAG_AND_DROP_AREA_ITEM_ERROR}
                   >
-                    <div id="DRAG_AND_DROP_AREA_ITEM_IMAGE_CONTAINER" onDragOver={e => this.preventDefaults(e)} style={{ backgroundImage: `url(${item.url})` }}>
-                      <span id="DRAG_AND_DROP_AREA_ITEM_CANCEL_ICON" style={styles.DRAG_AND_DROP_AREA_ITEM_CANCEL_ICON} onClick={() => this.removeImage(index)}>
-                        {this.props.icons && this.props.icons.cancelIcon ? this.props.icons.cancelIcon : <img src={CancelIcon} width="15" height="15" />}
+                    <div
+                      id="DRAG_AND_DROP_AREA_ITEM_IMAGE_CONTAINER"
+                      onDragOver={e => this.preventDefaults(e)}
+                      style={{ backgroundImage: `url(${item.url})` }}
+                    >
+                      <span
+                        id="DRAG_AND_DROP_AREA_ITEM_CANCEL_ICON"
+                        style={styles.DRAG_AND_DROP_AREA_ITEM_CANCEL_ICON}
+                        onClick={() => this.removeImage(index)}
+                      >
+                        {this.props.icons && this.props.icons.cancelIcon ? (
+                          this.props.icons.cancelIcon
+                        ) : (
+                          <img src={CancelIcon} width="15" height="15" />
+                        )}
                       </span>
                       {this.props.crop ? (
-                        <span id="DRAG_AND_DROP_AREA_ITEM_CROP_ICON" style={styles.DRAG_AND_DROP_AREA_ITEM_CROP_ICON} onClick={() => this.openModal(index)}>
-                          {this.props.icons && this.props.icons.cropIcon ? this.props.icons.cropIcon : <img src={CropIcon} width="15" height="15" />}
+                        <span
+                          id="DRAG_AND_DROP_AREA_ITEM_CROP_ICON"
+                          style={styles.DRAG_AND_DROP_AREA_ITEM_CROP_ICON}
+                          onClick={() => this.openModal(index)}
+                        >
+                          {this.props.icons && this.props.icons.cropIcon ? (
+                            this.props.icons.cropIcon
+                          ) : (
+                            <img src={CropIcon} width="15" height="15" />
+                          )}
                         </span>
                       ) : (
                         ""
@@ -243,7 +270,14 @@ class Dnd extends Component {
             </div>
           )}
         </div>
-        <Modal isOpen={open} {...this.props} onRequestClose={this.handleClearToDefault} getcropImage={this.getcropImage} cancelCrop={this.cancelCrop} imageSrc={cropImgSrc} />
+        <Modal
+          isOpen={open}
+          {...this.props}
+          onRequestClose={this.handleClearToDefault}
+          getcropImage={this.getcropImage}
+          cancelCrop={this.cancelCrop}
+          imageSrc={cropImgSrc}
+        />
       </div>
     );
   }
