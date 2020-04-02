@@ -15,6 +15,7 @@ class Cropper extends Component {
           width: 30,
           aspect: 4 / 3
         };
+    if (!cropRatio.aspect) cropRatio.aspect = 4 / 3;
     if (props.freeCrop) cropRatio = {};
     this.state = {
       crop: cropRatio

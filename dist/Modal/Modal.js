@@ -117,6 +117,7 @@ var Cropper = function (_Component) {
       width: 30,
       aspect: 4 / 3
     };
+    if (!cropRatio.aspect) cropRatio.aspect = 4 / 3;
     if (props.freeCrop) cropRatio = {};
     _this.state = {
       crop: cropRatio
