@@ -30,13 +30,13 @@
 ## Installation
 
 ```js
-npm i react-custom-dnd --save
+npm i react-dnd-crop --save
 ```
 
 ## Usage
 
 ```js
-import Dnd from "react-custom-dnd";
+import Dnd from "react-dnd-crop";
 ```
 
 ## Example
